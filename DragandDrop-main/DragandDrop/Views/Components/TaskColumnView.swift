@@ -4,6 +4,7 @@ import SwiftUI
 import Algorithms
 import UniformTypeIdentifiers
 struct TaskColumnView: View {
+    
     let title: String
     let tasks: [TaskItem]
     let isTargeted: Bool
