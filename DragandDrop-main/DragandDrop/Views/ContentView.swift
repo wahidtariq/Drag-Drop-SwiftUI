@@ -4,10 +4,9 @@ import SwiftUI
 import Algorithms
 import UniformTypeIdentifiers
 
-
-
 struct TaskBoardView: View {
-    @State private var toDoTasks: [TaskItem] = [TaskMockData.taskOne, TaskMockData.taskTwo, TaskMockData.taskThree, TaskMockData.taskFour]
+    
+    @State private var toDoTasks: [TaskItem] = .default
     @State private var inProgressTasks: [TaskItem] = []
     @State private var doneTasks: [TaskItem] = []
     @State private var strTxtName : String = ""
@@ -83,7 +82,7 @@ struct TaskBoardView: View {
     private var customPopUpView: some View {
         CustomPopUpView(taskName: $strTxtName, showPopup: showPopup) {
             guard !strTxtName.isEmpty else {
-                showPopup = false // Validation not to allow empty ToDo's Dismiss the popup
+                showPopup = false // Validation not to allow empty ToDo's, and Dismiss the popup
                 return
             }
             let task = TaskItem(title: strTxtName)

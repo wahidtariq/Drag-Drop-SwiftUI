@@ -26,6 +26,18 @@ struct TaskItem: Codable, Hashable, Transferable {
     }
 }
 
+extension Array where Element == TaskItem {
+    
+    static var `default`: [TaskItem] {
+        [
+            TaskMockData.taskOne,
+            TaskMockData.taskTwo,
+            TaskMockData.taskThree,
+            TaskMockData.taskFour
+        ]
+    }
+}
+
 extension UTType {
     static let taskItem = UTType(exportedAs: "tanay.DragandDrop")
 }
